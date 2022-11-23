@@ -1,0 +1,96 @@
+project_structure:
+    build: build
+    contracts: contracts
+    interfaces: interfaces
+    reports: reports
+    scripts: scripts
+    tests: tests
+
+networks:
+    default: polygon-main-fork
+    development:
+        gas_limit: max
+        gas_buffer: 1
+        gas_price: 0
+        max_fee: null
+        priority_fee: null
+        reverting_tx_gas_limit: max
+        default_contract_owner: true
+        cmd_settings: null
+    polygon-main-fork: 
+        cmd_settings: null
+    live:
+        gas_limit: auto
+        gas_buffer: 1.1
+        gas_price: auto
+        max_fee: null
+        priority_fee: null
+        reverting_tx_gas_limit: false
+        default_contract_owner: false
+    polygon-mainnet:
+        cmd_settings: null
+
+compiler:
+    evm_version: null
+    solc:
+        version: null
+        optimizer:
+            enabled: true
+            runs: 200
+        remappings: 
+            - "@openzeppelin=OpenZeppelin/openzeppelin-contracts@3.0.0"
+            - "@aavecore=aave/aave-v3-core@1.16.2"
+            - "@aaveperiphery=aave/aave-v3-periphery@1.20.0"
+            - "@uniswap-periphery=Uniswap/v2-periphery@1.0.0-beta.0"
+    vyper:
+        version: null
+
+console:
+    show_colors: true
+    color_style: monokai
+    auto_suggest: true
+    completions: true
+    editing_mode: emacs
+
+reports:
+    exclude_paths: null
+    exclude_contracts: null
+    only_include_project: true
+
+hypothesis:
+    deadline: null
+    max_examples: 50
+    report_multiple_bugs: False
+    stateful_step_count: 10
+    phases:
+        explicit: true
+        reuse: true
+        generate: true
+        target: true
+        shrink: true
+
+networks: 
+    polygon-main-fork:
+        lending_pool_proxy: "0x794a61358D6845594F94dc1DB02A252b5b4814aD"
+        lending_pool: "0xDF9e4ABdbd94107932265319479643D3B05809dc"
+        aave_oracle: "0xb023e699F5a33916Ea823A16485e259257cA8Bd1"
+        cmd_settings:
+            unlock: null
+    polygon-main:
+        lending_pool_proxy: "0x794a61358D6845594F94dc1DB02A252b5b4814aD"
+        lending_pool: "0xDF9e4ABdbd94107932265319479643D3B05809dc"
+        aave_oracle: "0xb023e699F5a33916Ea823A16485e259257cA8Bd1"
+
+wallets: 
+    polygon-main:
+        private-key: ${PRIVATE_KEY}
+
+autofetch_sources: true
+dependencies: 
+    - OpenZeppelin/openzeppelin-contracts@3.0.0
+    - aave/aave-v3-core@1.16.2
+    - aave/aave-v3-periphery@1.20.0
+    - Uniswap/v2-periphery@1.0.0-beta.0
+dev_deployment_artifacts: true
+
+dotenv: .env
