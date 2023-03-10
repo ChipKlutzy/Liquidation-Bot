@@ -19,6 +19,8 @@ networks:
         cmd_settings: null
     polygon-main-fork: 
         cmd_settings: null
+    mainnet-fork:
+        cmd_settings: null
     live:
         gas_limit: auto
         gas_buffer: 1.1
@@ -27,7 +29,9 @@ networks:
         priority_fee: null
         reverting_tx_gas_limit: false
         default_contract_owner: false
-    polygon-mainnet:
+    polygon-main:
+        cmd_settings: null
+    mainnet:
         cmd_settings: null
 
 compiler:
@@ -70,17 +74,34 @@ hypothesis:
         shrink: true
 
 networks: 
+    default: polygon-main-fork
     polygon-main-fork:
         lending_pool_proxy: "0x794a61358D6845594F94dc1DB02A252b5b4814aD"
         lending_pool: "0xDF9e4ABdbd94107932265319479643D3B05809dc"
         aave_oracle: "0xb023e699F5a33916Ea823A16485e259257cA8Bd1"
+        address_provider: "0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb"
+        router02: "0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff"
         cmd_settings:
             unlock: null
     polygon-main:
         lending_pool_proxy: "0x794a61358D6845594F94dc1DB02A252b5b4814aD"
         lending_pool: "0xDF9e4ABdbd94107932265319479643D3B05809dc"
         aave_oracle: "0xb023e699F5a33916Ea823A16485e259257cA8Bd1"
-
+        address_provider: "0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb"
+        router02: "0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff"
+    mainnet-fork:
+        address_provider: "0xB53C1a33016B2DC2fF3653530bfF1848a515c8c5"
+        lending_pool_proxy: "0x7d2768dE32b0b80b7a3454c06BdAc94A69DDc7A9"
+        lending_pool: "0xC6845a5C768BF8D7681249f8927877Efda425baf"
+        aave_oracle: "0xA50ba011c48153De246E5192C8f9258A2ba79Ca9"
+        unirouter02: "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D"
+    mainnet:
+        address_provider: "0xB53C1a33016B2DC2fF3653530bfF1848a515c8c5"
+        lending_pool_proxy: "0x7d2768dE32b0b80b7a3454c06BdAc94A69DDc7A9"
+        lending_pool: "0xC6845a5C768BF8D7681249f8927877Efda425baf"
+        aave_oracle: "0xA50ba011c48153De246E5192C8f9258A2ba79Ca9"
+        unirouter02: "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D"
+        
 wallets: 
     polygon-main:
         private-key: ${PRIVATE_KEY}

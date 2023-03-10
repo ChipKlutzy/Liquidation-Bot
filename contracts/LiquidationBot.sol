@@ -4,7 +4,7 @@ pragma solidity >=0.8.5;
 
 import "./PoolInit.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-import "interfaces/IUniswapV2Router02.sol";
+import "../interfaces/IUniswapV2Router02.sol";
 
 
 contract LiquidationBot is PoolInit {
